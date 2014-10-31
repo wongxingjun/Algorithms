@@ -90,7 +90,7 @@ void KMP(SString S,SString T,int next[],int pos=1 )
 
 
 
-int  main()
+int main()
 {
     SString S,T;
     int order;

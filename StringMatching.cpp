@@ -90,7 +90,7 @@ void KMP(SString S,SString T,int next[],int pos=1 )
 
 
 
-void main()
+int  main()
 {
     SString S,T;
     int order;
@@ -110,5 +110,6 @@ void main()
         BF(S,T,1);
     else if(order==2)
         KMP(S,T, next,1);
+	return 0;
 }
 

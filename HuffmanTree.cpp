@@ -1,7 +1,3 @@
-/*HuffmanTree code
-作者:王行军   
-时间:2011-11-03-21:03
-*/
 #include<iostream>
 #include<string>
 #include<malloc.h>

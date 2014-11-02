@@ -12,7 +12,7 @@ typedef struct
 }HTnode,*HuffmanTree;
 typedef char*  *HuffmanCode;
 
-void Selectusing(HuffmanTree &HT,int &k,int &t)//Select函数将会调用的二级函数
+void Selectusing(HuffmanTree &HT,int &k,int &t)
 {
 	int j;
 	for(j=1;j<=k;j++)

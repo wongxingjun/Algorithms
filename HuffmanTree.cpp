@@ -22,27 +22,27 @@ void Selectusing(HuffmanTree &HT,int &k,int &t)
 			t=j;
 		    break;
 		}
-	}//找到第一个parent为0的节点编号作为t的初值
+	}
 	for(j=1;j<=k;j++)
 	{
 		if(HT[j].parent==0)
 			if(HT[j].weight<HT[t].weight)
 				t=j;
-	}//采用交换法搜索最小值
+	}
 	
 }
 
 void Select(HuffmanTree &HT,int k,int& t1,int& t2)
-{  //这也是Select函数的一种，只不过有点繁琐
+{  
 	Selectusing(HT,k,t1);
-	HT[t1].parent=1;//这是为了使得t1不对下一次筛选t2产生影响
+	HT[t1].parent=1;
 	Selectusing(HT,k,t2);
-	HT[t1].parent=0;//对上次为了消除t1对t2影响而做的修正，由于生成树过程会对其重新赋值，可以不要
+	HT[t1].parent=0;
 }     
 
 
 /*void Select(HuffmanTree HT,int u,int &s1,int &s2) 
-{ //改进后的Select函数
+{
     int j,k=1;                
    while(HT[k].parent!=0) 
        k++;
@@ -60,7 +60,7 @@ void Select(HuffmanTree &HT,int k,int& t1,int& t2)
  } 
 */
 
-void HuffmanCoding(HuffmanTree &HT,HuffmanCode &HC,char *c,int *w,int n)//编码函数
+void HuffmanCoding(HuffmanTree &HT,HuffmanCode &HC,char *c,int *w,int n)
 {
 	int i,s1,s2,ch,f;
 	char *cd;
@@ -110,9 +110,9 @@ void HuffmanCoding(HuffmanTree &HT,HuffmanCode &HC,char *c,int *w,int n)//编码函
 	free (cd);
 }
 
-void HuffmanDecoding(HuffmanTree &HT,int n)//译码函数
+void HuffmanDecoding(HuffmanTree &HT,int n)//
 {
-	string s;//以字符串来处理密码组较为简便
+	string s;//
 	cout<<"请依次输入二进制密码串:"<<endl;
 	cin>>s;
 	int i=0;
@@ -124,10 +124,10 @@ void HuffmanDecoding(HuffmanTree &HT,int n)//译码函数
 		p=&HT[p->lchild];
 	  else
 		p=&HT[p->rchild];
-	  if(p->lchild==0)//如果是叶节点则译出此字符
+	  if(p->lchild==0)
 	  {
          cout<<p->symbol;
-	     p=&HT[2*n-1];//必须将搜索指针重置到树根以进行下次搜索译码
+	     p=&HT[2*n-1];
 	  }
 	  i++;
 	}

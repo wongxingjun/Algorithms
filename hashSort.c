@@ -8,7 +8,6 @@ int main()
 {
 	char s[MAX];
 	scanf("%s",s);
-	printf("%s\n",s);
 	int i,j;
 	int num[26]={0};
 	for(i=0;i<strlen(s);i++)

@@ -93,7 +93,7 @@ void KMP(SString S,SString T,int next[],int pos=1 )
 int main()
 {
     SString S,T;
-    int order;
+    int choice;
     int next[MAX];
     char s1[MAX];
     char s2[MAX];
@@ -105,10 +105,10 @@ int main()
     StrAssign(T, s2);
     get_next(T, next);
     cout<<"Which algorithm you want? Input 1 for BF or 2 for KMP"<<endl;
-    cin>>order;
-    if(order==1)
+    cin>>choice;
+    if(choice==1)
         BF(S,T,1);
-    else if(order==2)
+    else if(choice==2)
         KMP(S,T, next,1);
 	return 0;
 }

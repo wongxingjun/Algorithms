@@ -28,6 +28,7 @@ int main()
             j--;
     }
     for(i=0;i<n;i++)
-        printf("%d ",a[i]);
-    return 0;
+		printf("%d ",a[i]);
+	free(a);
+	return 0;
 }

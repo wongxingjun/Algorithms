@@ -4,7 +4,9 @@
 int Bsearch(int a[],int left,int right,int key)
 {
     int midd=(left+right)/2;
-    while(a[midd]!=key)
+    if(a[midd]==key)
+        return midd;
+    while(left<right)
     {
         if(key>a[midd])
         {
@@ -17,13 +19,16 @@ int Bsearch(int a[],int left,int right,int key)
             return Bsearch(a,left,right,key);
         }
     }
-    return midd;
+    return -1;
 }
 int main()
 {
     int a[10]={0,3,6,7,8,1,12,42,72,89};
     int key;
     scanf("%d",&key);
-    printf("element [%d] matches\n",Bsearch(a,0,9,key));
+    if(Bsearch(a,0,9,key)>=0)
+        printf("element [%d] matches\n",Bsearch(a,0,9,key));
+    else
+        printf("no element matches!\n");
     return 0;
 }

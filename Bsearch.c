@@ -1,3 +1,4 @@
+/*Binary search algorithm*/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -23,7 +24,7 @@ int Bsearch(int a[],int left,int right,int key)
 }
 int main()
 {
-    int a[10]={0,3,6,7,8,1,12,42,72,89};
+    int a[10]={0,1,2,3,4,5,6,7,8,9};//a must be a sorted array!!
     int key;
     scanf("%d",&key);
     if(Bsearch(a,0,9,key)>=0)

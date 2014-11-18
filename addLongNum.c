@@ -1,34 +1,70 @@
-/*两个超大整数相加,HDOJ 1002 解题报告
- */
+/*两个超大整数相加,HDOJ 1002解题报告*/
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-inline float func(float a,float b,float c,float x)
+#include <string.h>
+#define M 1002
+int reverse(char* s)
 {
-    return a*pow(x,2)+b*x+c;
-}
-float newton(float a,float b,float c,float x0)
-{
-    float x,temp;
-    x=x0;
-    temp=x0;
-    x=(-func(a,b,c,x)/(2*a*x+b))+x;
-    while(!(abs(temp-x)<1e-7))
+    int len=strlen(s);
+    char* temp=(char*)malloc(sizeof(char)*len);
+    strcpy(temp,s);
+    int i;
+    for(i=len-1; i>=0; i--)
     {
-        temp=x;
-        x=(-func(a,b,c,x)/(2*a*x+b))+x;
+        s[len-i-1]=temp[i];
     }
-    return x;
+    free(temp);
+    return 0;
+}
+int addLong(char* a,char* b,int* c)
+{
+    int alen=strlen(a);
+    int blen=strlen(b);
+    int flag=M-1;
+    int i;
+    int inc=0;
+    if(alen>blen)
+    {
+        for(i=blen;i<=alen-1;i++)
+            b[i]='0';
+    }
+    else
+    {
+        for(i=alen;i<=blen-1;i++)
+            a[i]='0';
+    }
+    int maxlen=alen>blen?alen:blen;
+    for(i=0; i<maxlen; i++)
+    {
+        c[flag--]=(a[i]-'0'+b[i]-'0'+inc)%10;
+        inc=(a[i]-'0'+b[i]-'0'+inc)/10;
+    }
+    if(inc>0)
+    {
+        c[flag]=inc;
+        flag--;
+    }
+    return flag+1;
 }
 int main()
 {
-    float a,b,c,x0;
-    scanf("%f%f%f%f",&a,&b,&c,&x0);
-    float delta=b*b-4*a*c;
-    //printf("%f\n",delta);
-    if(abs(delta)<1e-5)
-        return -1;
-    else
-        printf("%f\n",newton(a,b,c,x0));
+    char a[M],b[M];
+    int c[M+5],ncase,i,flag;
+    scanf("%d",&ncase);
+    for(i=0; i<ncase; i++)
+    {
+        scanf("%s%s",a,b);
+        printf("Case %d:\n",i+1);
+        printf("%s + %s = ",a,b);
+        reverse(a);
+        reverse(b);
+        flag=addLong(a,b,c);
+        for(;flag<=M-1;flag++)
+            printf("%d",c[flag]);
+        if(i==ncase-1)
+            printf("\n");
+        else
+            printf("\n\n");
+    }
     return 0;
 }

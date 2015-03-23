@@ -1,4 +1,4 @@
-algorithms
+Algorithms
 ==========
 
-Implementation of some algorithms , just for killing time. {-_-}
+Implementation of some algorithms.

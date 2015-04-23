@@ -1,5 +1,4 @@
-/*两个超大整数相加,HDOJ 1002解题报告*/
-#include <stdio.h>
+#include <stdio.h>                    
 #include <stdlib.h>
 #include <string.h>
 #define M 1002

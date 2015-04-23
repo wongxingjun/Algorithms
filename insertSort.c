@@ -1,7 +1,3 @@
-/*
-Author: wangxingjun
-Time: 2014-11-2
-*/
 #include<stdio.h>
 #include<malloc.h>
 int main()

@@ -1,3 +1,3 @@
-###[leetcode](https://oj.leetcode.com)解题报告###
+#[leetcode](https://oj.leetcode.com)
 -----
-leetcode测评网站上的题目解题报告
+Answers to some problems published on Online Judge leetcode.

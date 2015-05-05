@@ -1,3 +1,3 @@
-#[leetcode](https://oj.leetcode.com)
+#LeetCode Answers
 -----
-Answers to some problems published on Online Judge leetcode.
+Answers to problems published on Online Judge [leetcode](https://oj.leetcode.com)

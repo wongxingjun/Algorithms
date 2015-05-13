@@ -8,6 +8,6 @@ class Solution:
 				dic[i]=1
 			else:
 				dic[i]+=1
-			for e in dic:
-				if dic[e]==1:
-					return e
+		for e in dic:
+			if dic[e]==1:
+				return e

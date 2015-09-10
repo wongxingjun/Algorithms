@@ -3,4 +3,4 @@
 Answers to problems published on Online Judge [leetcode](https://oj.leetcode.com)
 
 -----
-Total: 22
+Total: 25

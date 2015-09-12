@@ -2,5 +2,4 @@
 -----
 Answers to problems published on Online Judge [leetcode](https://oj.leetcode.com)
 
------
-Total: 25
+Total: 32 

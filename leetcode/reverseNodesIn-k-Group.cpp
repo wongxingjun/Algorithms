@@ -1,7 +1,16 @@
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
-        if(head==NULL||head->next==NULL||len(head)<k)
+        if(head==NULL||head->next==NULL)
+            return head;
+        int len=0;
+        ListNode* p=head;
+        while(p)
+        {
+            len++;
+            p=p->next;
+        }
+        if(len<k)
             return head;
         ListNode* cur=head;
         ListNode* next;
@@ -20,16 +29,5 @@ public:
         if(cur)
             head->next=reverseKGroup(cur,k);
         return pre;
-    }
-    int len(ListNode* head)
-    {
-        int len=0;
-        ListNode* p=head;
-        while(p)
-        {
-            len++;
-            p=p->next;
-        }
-        return len;
     }
 };

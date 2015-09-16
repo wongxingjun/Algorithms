@@ -1,4 +1,4 @@
 Algorithms
 ==========
 
-Implementation of some algorithms.
+Implementation of some algorithms and my code for practice.

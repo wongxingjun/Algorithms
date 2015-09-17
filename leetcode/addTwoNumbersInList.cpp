@@ -32,6 +32,7 @@ public:
                 cnt=cur->val/10;
                 cur->val%=10;
                 ListNode* tail=new ListNode(cnt);
+                //tail->val=cnt;
                 cur->next=tail;
                 tail->next=NULL;
                 return sum;
@@ -53,6 +54,7 @@ public:
             cnt=(cur->val+cnt)/10;
             cur->val=tmp;
             ListNode* tail=new ListNode(cnt);
+            //tail->val=cnt;
             cur->next=tail;
             tail->next=NULL;
         }

@@ -27,3 +27,31 @@ public:
         return res;
     }
 };
+
+
+
+//Simpified version
+class Solution {
+public:
+    vector<vector<int>> generate(int numRows) {
+        vector<vector<int>> res;
+        if(numRows<=0)
+            return res;
+        int level=1;
+        vector<int> preLevel={};
+        vector<int> curLevel;
+        for(;level<=numRows;level++)
+        {
+            int i=1;
+            curLevel.push_back(1);
+            for(;i<level-1;i++)
+                curLevel.push_back(preLevel[i-1]+preLevel[i]);
+            if(level>1)
+                curLevel.push_back(1);
+            res.push_back(curLevel);
+            preLevel=curLevel;
+            curLevel.erase(curLevel.begin(),curLevel.end());
+        }
+        return res;
+    }
+};

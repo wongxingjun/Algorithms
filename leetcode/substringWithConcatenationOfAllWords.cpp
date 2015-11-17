@@ -51,7 +51,7 @@ public:
 };
 */
 
-//Just AC with much time cost.
+//Just AC with time cost of more than 1200ms
 class Solution {
 public:
     vector<int> findSubstring(string s, vector<string>& words) {
@@ -68,6 +68,49 @@ public:
                 subS="";
                 subS.append(s,i+j*wlen,wlen);
                 smp[subS]++;
+            }
+            auto it=smp.begin();
+            for(;it!=smp.end();it++)
+                if(wmp.find(it->first)==wmp.end()||wmp.find(it->first)->second!=it->second)
+                    break;
+            if(it==smp.end())
+                res.push_back(i);
+            smp.clear();
+        }
+        return res;
+    }
+};
+
+
+//An improved version with time cost of about 750 ms
+class Solution {
+public:
+    vector<int> findSubstring(string s, vector<string>& words) {
+        vector<int> res;
+        unordered_map<string,int> wmp;
+        unordered_map<string,int> smp;
+        for(string w:words)
+            wmp[w]++;
+        int wlen=words[0].size();
+        int wcnt=words.size();
+        string subS;
+        int flag;
+        for(int i=0;i<s.size()-wlen*wcnt+1;i++){
+            for(int j=0;j<wcnt;j++){
+                subS="";
+                flag=0;
+                subS.append(s,i+j*wlen,wlen);
+                if(wmp.find(subS)==wmp.end())
+                {
+                    flag=1;
+                    break;
+                }
+                smp[subS]++;
+            }
+            if(flag==1)
+            {
+                smp.clear();
+                continue;
             }
             auto it=smp.begin();
             for(;it!=smp.end();it++)

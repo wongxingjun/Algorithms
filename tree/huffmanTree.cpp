@@ -29,22 +29,22 @@ void Selectusing(HuffmanTree &HT,int &k,int &t)
 			if(HT[j].weight<HT[t].weight)
 				t=j;
 	}
-	
+
 }
 
 void Select(HuffmanTree &HT,int k,int& t1,int& t2)
-{  
+{
 	Selectusing(HT,k,t1);
 	HT[t1].parent=1;
 	Selectusing(HT,k,t2);
 	HT[t1].parent=0;
-}     
+}
 
 
-/*void Select(HuffmanTree HT,int u,int &s1,int &s2) 
+/*void Select(HuffmanTree HT,int u,int &s1,int &s2)
 {
-    int j,k=1;                
-   while(HT[k].parent!=0) 
+    int j,k=1;
+    while(HT[k].parent!=0)
        k++;
     s1=k;
     for(j=1;j<=u;++j)
@@ -57,7 +57,7 @@ void Select(HuffmanTree &HT,int k,int& t1,int& t2)
     for(j=1;j<=u;++j)
        if(HT[j].parent==0&&HT[j].weight<HT[s2].weight&&j!=s1)
     s2=j;
- } 
+ }
 */
 
 void HuffmanCoding(HuffmanTree &HT,HuffmanCode &HC,char *c,int *w,int n)
@@ -131,7 +131,7 @@ void HuffmanDecoding(HuffmanTree &HT,int n)//
 	  }
 	  i++;
 	}
-	
+
 }
 
 void main()

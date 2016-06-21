@@ -21,7 +21,7 @@ public:
         }
         return index;
     }
-    
+
     int min(int a,int b)
     {
         return a>b?b:a;
@@ -38,8 +38,8 @@ public:
             find=map[target-nums[i]];
             if(find)
             {
-                res.push_back(find);
-                res.push_back(i+1);
+                res.push_back(find-1);
+                res.push_back(1);
                 break;
             }
             map[nums[i]]=i+1;

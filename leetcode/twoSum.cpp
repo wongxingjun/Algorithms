@@ -39,7 +39,7 @@ public:
             if(find)
             {
                 res.push_back(find-1);
-                res.push_back(1);
+                res.push_back(i);
                 break;
             }
             map[nums[i]]=i+1;
